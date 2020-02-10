@@ -1,0 +1,7 @@
+docker-compose up
+docker-compose up -d
+docker-compose down
+
+docker-compose exec db psql -U postgres -d email_sender -c 'select * from emails'
+
+docker-compose up -d --scale worker=3
